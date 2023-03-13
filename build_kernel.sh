@@ -12,5 +12,5 @@ export LLVM=1
 export DEPMOD=depmod
 export ARCH=arm64
 export TARGET_SOC=s5e8535
-make s5e8535-a14xxx_defconfig
+make physwizz_defconfig
 make
