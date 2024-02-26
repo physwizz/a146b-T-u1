@@ -401,8 +401,6 @@ include $(srctree)/scripts/subarch.include
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 ARCH		?= $(SUBARCH)
 
-CROSS_COMPILE ?= $(srctree)/toolchain/aarch64-linux-android-4.9/bin/aarch64-linux-android-
-
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
 SRCARCH 	:= $(ARCH)
@@ -464,10 +462,7 @@ KBUILD_HOSTLDLIBS   := $(HOST_LFS_LIBS) $(HOSTLDLIBS)
 # Make variables (CC, etc...)
 CPP		= $(CC) -E
 ifneq ($(LLVM),)
-#CC		= clang
-cc=  ?= $(srctree)/toolchain/clang-r450784d/bin/clang
-
-
+CC		= clang
 LD		= ld.lld
 AR		= llvm-ar
 NM		= llvm-nm
